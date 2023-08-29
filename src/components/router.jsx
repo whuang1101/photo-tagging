@@ -8,6 +8,7 @@ const Router = () => {
       {
         path: "/",
         element: <Home />,
+        errorElement: <Leaderboard />
       },
       {
         path: "/leaderboard",

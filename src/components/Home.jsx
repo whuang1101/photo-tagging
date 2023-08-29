@@ -115,21 +115,36 @@ const Home = () => {
     setCirclePresent(false);
   }
   // Form to submit and update leaderboard backend
-  const handleFormSubmit =  async (e) => {
-    const post = {name: name,
-    time:time,
-    date: new Date()}
+  const handleFormSubmit = async (e) => {
     e.preventDefault();
-    fetch("https://photo-tagging-serverside-production.up.railway.app/leaderboard", {
-      method:"Post",
-      headers: {
-        "Content-Type": "application/json"
-    },
-    body: JSON.stringify(post)})
-    navigate("/leaderboard")
+  
+    const post = {
+      name: name,
+      time: time,
+      date: new Date()
+    };
+  
+    try {
+      const response = await fetch("https://photo-tagging-serverside-production.up.railway.app/leaderboard", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(post)
+      });
+      console.log()
+      if (response.status) {
+        console.log("hi")
+        navigate("/leaderboard");
+      } else {
+        console.error("Failed to submit data.");
+      }
+    } catch (error) {
+      console.error("An error occurred:", error);
+    }
+  };
 
-
-  }
+  
 
   const handleGameBegin = () => {
     setGameBegin(!gameBegin);

@@ -11,8 +11,8 @@ const Header = ({PokeBallFound ,JumpluffFound,SnowruntFound,MudkipFound, GameScr
         <header>
             {GameScreen ? <>
             <div className="titles">
-                <motion.h1 whileHover={{scale: 1.1}} whileTap = {{scale: .9}} className="home"><Link to="/" style={{textDecoration:"none", color: "white"}}>Pixel Finder </Link></motion.h1>
-                <motion.h1 whileHover={{scale: 1.1}} whileTap = {{scale: .9}} className="leader-board"><Link to="/leaderboard" style={{textDecoration:"none", color: "white"}}>Leaderboard</Link></motion.h1>
+                <motion.h1 whileHover={{scale: 1.1}} whileTap = {{scale: .9}} className="home"><Link to="/" style={{textDecoration:"none", color: "white"}}>Pixel <i style={{color:"yellow"}}>Finder</i> </Link></motion.h1>
+                <motion.h1 whileHover={{scale: 1.1}} whileTap = {{scale: .9}} className="leader-board"><Link to="/leaderboard" style={{textDecoration:"none", color: "red"}}>Leaderboard</Link></motion.h1>
             </div>
             <Stopwatch PokeBallFound={PokeBallFound} JumpluffFound={JumpluffFound} SnowruntFound={SnowruntFound} MudkipFound={MudkipFound}
             setRealTime={setTime} realTime={time} gameBegin={gameBegin}/>
@@ -37,8 +37,8 @@ const Header = ({PokeBallFound ,JumpluffFound,SnowruntFound,MudkipFound, GameScr
             </div>
             </>
             :<>
-            <motion.h1 whileHover={{scale: 1.1}} whileTap = {{scale: .9}} className="home"><Link to="/" style={{textDecoration:"none", color: "white"}}>Pixel Finder </Link></motion.h1>
-            <motion.h1 whileHover={{scale: 1.1}} whileTap = {{scale: .9}} className="leader-board"><Link to="/leaderboard" style={{textDecoration:"none", color: "white"}}>Leaderboard</Link></motion.h1></>}
+            <motion.h1 whileHover={{scale: 1.1}} whileTap = {{scale: .9}} className="home"><Link to="/" style={{textDecoration:"none", color: "white"}}>Pixel <i style={{color:"yellow"}}>Finder</i> </Link></motion.h1>
+            <motion.h1 whileHover={{scale: 1.1}} whileTap = {{scale: .9}} className="leader-board"><Link to="/leaderboard" style={{textDecoration:"none", color: "red"}}>Leaderboard</Link></motion.h1></>}
         </header>
     )
 }

@@ -1,0 +1,36 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+header {
+    display: flex;
+    background-color: black;
+    color: white;
+    align-items: center;
+    padding: 1em;
+    justify-content: space-between;
+}
+.titles {
+    display: flex; 
+    gap: 1em;
+}
+.picture {
+    height: auto;
+
+}
+
+.finder {
+    display: flex;
+    gap: 1em;
+}
+.pokeball, .jumpluff, .snorunt, .mudkip {
+    display: flex;
+    gap: 1em;
+    align-items: center;
+}
+
+.pokeball:hover, .jumpluff:hover, .snorunt:hover, .mudkip:hover {
+    background-color: blue;
+    border-radius: 1em;
+}

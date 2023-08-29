@@ -1,0 +1,47 @@
+.leaderboard-background {
+    min-height: 100vh;
+    background-color: rgba(33,33,33);
+    position: relative;
+}
+.leaderboard-container{
+
+    display: flex;
+    justify-content: center;
+    padding: 2em;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: clamp(60%,1000px,80%);
+    background-color: rgba(42,42,42);
+    border: .3em solid rgba(42,42,42);
+    color: white;
+    box-shadow: 1px 1px 15px white;
+  }
+  th{
+    background-color: black;
+    color: white;
+    padding: 1.5em;
+    text-align: left;
+  }
+  td{
+    text-align: left;
+    padding: 1em;
+  }
+  
+  tr:nth-child(even) {
+    background-color: rgba(33,33,33);
+  }
+
+  .rank{
+    width: 10%;
+  }
+  .name, .time, .date {
+    width: 30%;
+  }
+  @media screen and (max-width: 1100px) {
+    header{
+      font-size: .8em;
+    }
+  }

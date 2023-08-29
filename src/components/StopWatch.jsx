@@ -1,9 +1,19 @@
 import React, { useState, useEffect } from 'react';
 
-const Stopwatch = () => {
+const Stopwatch = ({PokeBallFound ,JumpluffFound,SnowruntFound,MudkipFound, realTime, setRealTime, gameBegin}) => {
   const [time, setTime] = useState(0);
   const [isRunning, setIsRunning] = useState(true);
 
+  useEffect(() => {
+    if(PokeBallFound && JumpluffFound && SnowruntFound && MudkipFound){
+      setIsRunning(false);
+      setRealTime(time/1000);
+    }
+
+  },[PokeBallFound,JumpluffFound,SnowruntFound,MudkipFound])
+  useEffect(()=> {
+    setIsRunning(!isRunning);
+  },[gameBegin])
   useEffect(() => {
     let interval;
     if (isRunning) {
@@ -31,7 +41,7 @@ const Stopwatch = () => {
   };
 
   return (
-      <div>{formatTime(time)}</div>
+      <div style={{fontSize: "1.5em"}}> Time: {formatTime(time)}</div>
   );
 };
 

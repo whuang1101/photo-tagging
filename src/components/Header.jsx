@@ -2,6 +2,7 @@ import PokeBall from "../assets/pokeball.png";
 import Jumpluff from "../assets/jumpluff.png"
 import Snowrunt from "../assets/snorunt.png"
 import Mudkip from "../assets/mudkip.png"
+import Stopwatch from "./StopWatch";
 const Header = () => {
     return (
         <header>
@@ -9,6 +10,7 @@ const Header = () => {
                 <h1 className="home">Pixel Finder</h1>
                 <h1 className="leader-board">Leaderboard</h1>
             </div>
+            <Stopwatch/>
             <div className="finder">
                 <div className="pokeball">
                 <img src={PokeBall} alt="pokeball" style={{height:"2em"}}/>

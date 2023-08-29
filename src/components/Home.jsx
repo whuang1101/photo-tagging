@@ -1,21 +1,23 @@
 import Header from "./Header";
 import "../css/index.css";
 import pokemonImage from "../assets/h4cxlfdfgiz81.jpg";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import PokeBall from "../assets/pokeball.png";
 import Jumpluff from "../assets/jumpluff.png"
 import Snowrunt from "../assets/snorunt.png"
 import Mudkip from "../assets/mudkip.png"
+import Location from "../assets/location.png"
 const Home = () => {
   const [coordinates, setCoordinates] = useState({ x: 0, y: 0 });
   const [dropDown, setDropDown] = useState({ top: 0, left: 0 });
   const [imageDimensions, setImageDimensions] = useState({ width: 0, height: 0 });
   const [actualCoordinates, setActualCoordinates] = useState({ top: 0, left: 0 });
+  const [range, setRange] = useState({})
+  const [foundPokeball, setFoundPokeball] = useState(false);
   // const [coordinatesRange, setCoordinatesRange] = useState({minHeight: 0, maxHeight:0, minWidth: 0, maxWidth: 0});
   const [circlePresent, setCirclePresent] = useState(false);
   const handleCircleClick = () => {
- 
   }
   const handleImageClick = (event) => {
     const image = event.target;
@@ -30,11 +32,7 @@ const Home = () => {
       minWidth: (x-30) / imageDimensions.width,
       maxWidth: (x+30) / imageDimensions.width,
     }
-    console.log(x / imageDimensions.width, y / imageDimensions.height)
-    if((range.minWidth< 0.871 && range.maxWidth > 0.871) && (range.minHeight < .7599 && range.maxHeight > .7599)){
-      console.log("Found PokeBall")
-    }
-    
+    setRange(range); 
     setCoordinates({ x, y });
   };
 
@@ -43,7 +41,6 @@ const Home = () => {
     setImageDimensions({ width: image.width, height: image.height });
   };
   const newTop = (prevTop) => {
-   console.log(prevTop)
    const newTop = (200/imageDimensions.height)*100;
    if(prevTop > 67.8){
     return (prevTop-newTop)
@@ -52,13 +49,18 @@ const Home = () => {
   }
 
   const newRight = (prevTop) => {
-    console.log(prevTop)
     const newTop = (200/imageDimensions.width)*100;
     if(prevTop > 80){
      return (prevTop-newTop)
     }
     return prevTop
    }
+  const findPokeball = () => {
+    if((range.minWidth< 0.871 && range.maxWidth > 0.871) && (range.minHeight < .7599 && range.maxHeight > .7599)){
+      console.log("Found PokeBall")
+      setFoundPokeball(true);
+    }
+  }
   return (
     <>
       <Header />
@@ -79,9 +81,10 @@ const Home = () => {
         </div>
         <motion.div className="dropdown" style={{ position: "absolute", top:newTop(actualCoordinates.top)  + "%",  left: newRight(actualCoordinates.left) + "%", padding:"1em",transform: "translate(25px, 25px)", backgroundColor: "black", color:"white", borderRadius:"1em"}}>
           <ul style={{backgroundColor:"grey", borderRadius:"1em"}}>
-          <li className="pokeball" style={{padding:".5em"}}>
+          <li className="pokeball" style={{padding:".5em"}} onClick={() => findPokeball()}>
                   <img src={PokeBall} alt="pokeball" style={{height:"1em"}}/>
-                    <h3>PokeBall</h3>
+
+                    {foundPokeball ?<h3 style={{textDecoration:"line-through"}}>PokeBall</h3>: <h3>Pokeball</h3>}
                 </li>
                 <li className="jumpluff" style={{padding:".5em"}}>
                     <img src={Jumpluff} alt="jumpluff" style={{height:"1em"}}/>
@@ -95,12 +98,12 @@ const Home = () => {
                 <li className="mudkip" style={{padding:".5em"}}>
                     <img src={Mudkip} alt="mudkip" style={{height:"1em"}}/>
                     <h3>Mudkip</h3>
-
                 </li>
           </ul>
         </motion.div>
-        </>
+        </> 
         }
+        {foundPokeball && <img src={Location} style={{ position: "absolute", top:75.71  + "%",  left: 87.3+ "%",height:"2em"}}/>}
       </div>
       {/* <div>
         <p>Image Dimensions: {imageDimensions.width} x {imageDimensions.height}</p>

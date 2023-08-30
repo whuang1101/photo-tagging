@@ -25,7 +25,8 @@ In this game you try to find the items in the top right corner as fast as possib
 - Information is called from a rest API I created.
 - Framer motion for better animations
 - React Router Dom for client-side routing.
-
+## Credit
+- u/trippeltorch for the main drawing
 ## Works
 - [Previous Project-BlogAPI](https://github.com/whuang1101/blog_client#works)
 - Next Project- In the works

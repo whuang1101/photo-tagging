@@ -1,6 +1,8 @@
 # Pixel Finder
 In this game you try to find the items in the top right corner as fast as possible.
-[Serverside code here](https://github.com/whuang1101/Photo-tagging-serverside)
+- [Serverside code here](https://github.com/whuang1101/Photo-tagging-serverside)
+### [Live Demo](https://incandescent-froyo-150a8b.netlify.app/)
+
 ## Homepage 
 <img width="1492" alt="image" src="https://github.com/whuang1101/photo-tagging/assets/91977590/bc34a70a-9694-43d1-a6bb-df8cc85eb5c8">
 

@@ -9,9 +9,9 @@ In this game you try to find the items in the top right corner as fast as possib
 
 ## Game Mechanics
 <img width="342" alt="image" src="https://github.com/whuang1101/photo-tagging/assets/91977590/eb3aaac9-e9d4-4c82-b7ec-50f1431e770e">
-Click on the pokeball to place a tag 
+- Click on the pokeball to place a tag 
 <img width="133" alt="image" src="https://github.com/whuang1101/photo-tagging/assets/91977590/20aa4f91-41b2-41c6-9918-413a4712759c">
-Tag Placed
+- Tag Placed
 
 ## Features
 - Leaderboard to keep track of winners times

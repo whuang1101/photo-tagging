@@ -27,5 +27,5 @@ In this game you try to find the items in the top right corner as fast as possib
 - React Router Dom for client-side routing.
 
 ## Works
-- [Previous Project-BlogAPI](https://github.com/whuang1101/blog_client#works);
+- [Previous Project-BlogAPI](https://github.com/whuang1101/blog_client#works)
 - Next Project- In the works

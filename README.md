@@ -31,4 +31,4 @@ In this game you try to find the items in the top right corner as fast as possib
 - u/trippeltorch for the main drawing
 ## Works
 - [Previous Project-BlogAPI](https://github.com/whuang1101/blog_client#works)
-- Next Project- In the works
+- [Next Project - KeepIntouch(A Messenger Clone)](https://github.com/whuang1101/KeepInTouch/)
